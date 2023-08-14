@@ -1,5 +1,5 @@
 function generateMarkdown(userResponses, userInfo) {
-  // Generate Table of Contents conditionally based on userResponses
+  // Table of Contents based on user responses
   let inputToC = `## Table of Contents`;
 
   if (userResponses.installation !== '') { inputToC += `
@@ -14,7 +14,7 @@ function generateMarkdown(userResponses, userInfo) {
   if (userResponses.tests !== '') { inputToC += `
   * [Tests](#tests)` };
 
-  // generate markdown for the top required portions of the README
+  // Top required portions of the README
   let draftMarkdown = 
   `# ${userResponses.title}
 
@@ -25,7 +25,7 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Description 
   
-  *The what, why, and how:* 
+  *What, why, and how:* 
   
   ${userResponses.description}
 
@@ -39,7 +39,7 @@ function generateMarkdown(userResponses, userInfo) {
   * [License](#license)`;
   
 
-  // Installation section
+  // Installation 
   if (userResponses.installation !== '') {
   
   draftMarkdown +=
@@ -47,13 +47,13 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Installation
   
-  *Steps required to install project and how to get the development environment running:*
+  *Instructions on how to install project and to get the development environment running:*
   
   ${userResponses.installation}`
   };
   
 
-  // Usage section
+  // Usage 
   if (userResponses.usage !== '') {
   
   draftMarkdown +=
@@ -68,7 +68,7 @@ function generateMarkdown(userResponses, userInfo) {
   };
   
   
-  // Contributing section
+  // Contributing 
   if (userResponses.contributing !== '') {
 
   draftMarkdown +=
@@ -77,13 +77,13 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Contributing
   
-  *If you would like to contribute it, you can follow these guidelines for how to do so.*
+  *If you would like to contribute to this project, you can follow these instructions for how to do so.*
   
   ${userResponses.contributing}`
   };
   
 
-  // Tests section
+  // Tests 
   if (userResponses.tests !== '') {
   
   draftMarkdown +=
@@ -97,7 +97,7 @@ function generateMarkdown(userResponses, userInfo) {
   };
 
 
-  // License section
+  // License 
   draftMarkdown +=
   `
   
@@ -107,7 +107,7 @@ function generateMarkdown(userResponses, userInfo) {
   `;
 
 
-  // Questions / About Developer section
+  // Contact
   let draftDev = 
   `
   ---
@@ -131,7 +131,7 @@ function generateMarkdown(userResponses, userInfo) {
 
   `};
 
-  // Add developer section
+  // Developer section
   draftMarkdown += draftDev;
 
   // Return markdown

@@ -7,16 +7,16 @@ const axios = require('axios');
 const api = require('./utils/api.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// array of questions for user input
+// array of questions
 const questions = [
   {
     type: 'input',
-    message: "What is your GitHub username? (No @ needed)",
+    message: "Enter your GitHub username? (No @ needed)",
     name: 'username',
     default: 'neilmkflyingk',
     validate: function (answer) {
         if (answer.length < 1) {
-            return console.log("A valid GitHub username is required.");
+            return console.log("Please enter a valid GitHub username.");
         }
         return true;
     }
@@ -126,5 +126,5 @@ async function init() {
   }
 };
 
-// Function call to initialize app
+// Initialize app
 init();
