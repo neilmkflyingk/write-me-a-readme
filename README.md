@@ -36,7 +36,7 @@
   
   Once the application is running in your command line, answer the prompts in the command line and your Readme file will be generated. It will be named ExampleREADME.md and will be located at the root of the repo.
 
-  <video src='/usageVideo.mp4'></video>
+  <video src="/usageVideo.mp4"></video>
   
   ## License
   
